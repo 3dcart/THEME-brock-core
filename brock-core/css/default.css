@@ -1356,8 +1356,21 @@ iframe {
     .promos a {
         display: block;
     }
+@media(max-width:1024px){
+	.top-nav ul li {
+		margin: 0 1px 0 0;
+	}
+}
 @media (max-width: 767px) {
     .promos .row > div {
         margin-top: 15px;
     }
+	
+.mailinglist-submit {
+    width: auto;
+}
+}
+
+html{
+	overflow: visible !important;
 }
