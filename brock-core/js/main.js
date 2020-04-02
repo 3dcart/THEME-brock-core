@@ -92,6 +92,11 @@ function moveMenu() {
     }
 }
 
+function setLeftWidth() {
+	var new_width = $('.leftNavFixed').outerWidth();
+	$('#navbar-fixed-side').width(new_width); 
+}
+
 jQuery(document).ready(function () {
 
     update_flyoutcart();
@@ -132,11 +137,18 @@ jQuery(document).ready(function () {
 });
 
 jQuery(window).load(function () {
+	"use strict";
+	
     moveMenu();
+	setLeftWidth();
 });
 jQuery(window).resize(function () {
+	"use strict";
+	
     moveMenu();
+	setLeftWidth();
 });
+
 
 jQuery(function ($) {
 	$('.navbar .dropdown').hover(function () {
