@@ -14,7 +14,14 @@
 footer {
   flex-shrink: 0;
 }
-
+.product-items.productList .product-item .img a {
+    position: initial;
+}
+@media (max-width: 991px){
+.product-items.productList .product-item .img {
+    width: 32%;
+}
+}
 body {
     /*font-family: 'Montserrat', sans-serif;*/
 	font-family: 'Raleway', sans-serif;
