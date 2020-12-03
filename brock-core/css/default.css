@@ -1380,6 +1380,12 @@ iframe {
     .promos .row > div {
         margin-top: 15px;
     }
+	#mobile-logo .logo img {
+		position: inherit;
+	}
+	#mobile-logo .logo {
+		height: auto;
+	}
 }
 @media(min-width: 768px) {
     .revealOnScroll {
