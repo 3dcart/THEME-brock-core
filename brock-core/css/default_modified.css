@@ -17,6 +17,21 @@ footer {
 .product-items.productList .product-item .img a {
     position: initial;
 }
+#skip a
+{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+#skip a:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
 @media (max-width: 991px){
 .product-items.productList .product-item .img {
     width: 32%;
@@ -457,6 +472,7 @@ ul.extrapages li a {
     font-weight: 300;
     line-height:36px;
 }
+.copyright a{color: #8c8c8c;}
 .copyright_txt {
     position:relative;
 }
