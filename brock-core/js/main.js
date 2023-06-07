@@ -92,7 +92,7 @@ function moveMenu() {
         respWidth = jQuery(window).width();
     }
 
-    if (respWidth < 767) {
+    if (respWidth < 768) {
         jQuery('#menulinks').appendTo('#mobile-menulinks');
         jQuery('#categories').appendTo('#mobile-categories');
     }
@@ -130,7 +130,7 @@ jQuery(document).ready(function () {
 
 
     var respWidth = window.innerWidth;
-    if (respWidth >= 767) {
+    if (respWidth >= 768) {
     	jQuery('.navbar .dropdown').hover(function () {
     		jQuery(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown('fast');
 
@@ -189,3 +189,69 @@ jQuery(function () {
 });
 
 jQuery("#logo").clone().appendTo("#mobile-logo");
+
+$(document).ready(function () {
+
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
+});
+
+jQuery(function () {
+
+    var $window = jQuery(window),
+        win_height_padded = $window.height() * 1.1;
+    $window.on('scroll', revealOnScroll);
+    function revealOnScroll() {
+        var scrolled = $window.scrollTop(),
+            win_height_padded = $window.height() * 1.1;
+        $(".revealOnScroll:not(.animated)").each(function () {
+            var $this = $(this),
+                offsetTop = $this.offset().top;
+
+            if (scrolled + win_height_padded > offsetTop) {
+                if ($this.data('timeout')) {
+                    window.setTimeout(function () {
+                        $this.addClass('animated ' + $this.data('animation'));
+                        $this.removeClass('revealOnScroll');
+                    }, parseInt($this.data('timeout'), 10));
+                } else {
+                    $this.addClass('animated ' + $this.data('animation'));
+                    $this.removeClass('revealOnScroll');
+                }
+            }
+        });
+        // Hidden...
+        $(".revealOnScroll.animated").each(function (index) {
+            var $this = $(this),
+                offsetTop = $this.offset().top;
+            if (scrolled + win_height_padded < offsetTop) {
+                $(this).removeClass('revealOnScroll animated');
+            }
+        });
+    }
+
+    revealOnScroll();
+
+    $('.ui.sidebar').sidebar({
+        context: $('.bottom.segment')
+    }).sidebar('attach events', '#navbar-toggle');
+
+    $("html").niceScroll({ cursoropacitymin: .3, cursorwidth: "8px", cursorcolor: "#111111" });
+    $(".navbar-fixed-side").niceScroll({ cursoropacitymin: .3, cursorwidth: "8px", horizrailenabled: false, cursorcolor: "#111111" });
+
+});
+setTimeout(function(){
+      $('.antiCls-xs').css("visibility", "visible");
+  }, 800);
