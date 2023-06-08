@@ -1,7 +1,7 @@
 /*
 ** Bootstrap over-rides
 */
-
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway:300,400,600,700&display=swap');
 .main-block2 {
   display: flex;
   height: 100%;
@@ -31,6 +31,11 @@ overflow:hidden;
 position:static;
 width:auto;
 height:auto;
+}
+@media (max-width: 767px) {
+	.antiCls-xs { 
+		visibility: hidden; 
+	}
 }
 @media (max-width: 991px){
 .product-items.productList .product-item .img {
@@ -69,6 +74,7 @@ h1 {
 }
 img {
     max-width:100%;
+    height:auto;
 }
 .titles {
     margin: 0 0 20px;
@@ -467,12 +473,12 @@ ul.extrapages li a {
     padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
-    color: #8c8c8c;
+    color: #000;
     font-size: 13px;
     font-weight: 300;
     line-height:36px;
 }
-.copyright a{color: #8c8c8c;}
+.copyright a{color: #000;}
 .copyright_txt {
     position:relative;
 }
@@ -539,7 +545,7 @@ ul.extrapages li a {
     width: 100%;
     max-width: 100%;
     height: 60px;
-    color: #afafaf;
+    color: #000;
     float: left;
     padding-right: 180px;
 }
