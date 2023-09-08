@@ -32,6 +32,7 @@ position:static;
 width:auto;
 height:auto;
 }
+#mobSearch{display:none !important}
 @media (max-width: 991px){
 .product-items.productList .product-item .img {
     width: 32%;
